@@ -111,65 +111,84 @@ The features with the highest RICE scores can be prioritized.
 📂 project-root
 │
 ├── 📂 config
-│   └── db.js (Database configuration and connection)
+│   ├── db.js (Database configuration and connection)
+│   └── env.js (Environment variable configurations)
 │
 ├── 📂 controllers
-│   ├── users.js (User-related logic: registration, login, profile management, etc.)
-│   ├── videos.js (Video-related logic: upload, edit, delete, etc.)
-│   ├── playlists.js (Playlist-related logic)
-│   ├── reports.js (Reporting logic)
-│   ├── bookings.js (Booking-related logic)
-│   ├── rewards.js (Reward-related logic)
-│   ├── search.js (Search-related logic)
-│   ├── licensees.js (Licensee-related logic)
-│   ├── payments.js (Payment-related logic)
-│   ├── downloads.js (Download-related logic)
-│   ├── streams.js (Streaming-related logic)
-│   ├── drm.js (DRM-related logic)
-│   ├── transcoding.js (Transcoding-related logic)
-│   └── authentication.js (Authentication and authorization logic)
+│   ├── usersController.js
+│   ├── videosController.js
+│   ├── playlistsController.js
+│   ├── reportsController.js
+│   ├── bookingsController.js
+│   ├── rewardsController.js
+│   ├── searchController.js
+│   ├── licenseesController.js
+│   ├── paymentsController.js
+│   ├── downloadsController.js
+│   ├── streamsController.js
+│   ├── drmController.js
+│   └── transcodingController.js
 │
 ├── 📂 models
-│   ├── userModel.js (Database queries related to users)
-│   ├── videoModel.js (Database queries related to videos)
-│   ├── playlistModel.js (Database queries related to playlists)
-│   ├── reportModel.js (Database queries related to reports)
-│   ├── bookingModel.js (Database queries related to bookings)
-│   ├── rewardModel.js (Database queries related to rewards)
-│   ├── searchModel.js (Database queries related to search)
-│   ├── licenseeModel.js (Database queries related to licensees)
-│   ├── paymentModel.js (Database queries related to payments)
-│   ├── downloadModel.js (Database queries related to downloads)
-│   ├── streamModel.js (Database queries related to streams)
-│   ├── drmModel.js (Database queries related to DRM)
-│   └── transcodingModel.js (Database queries related to transcoding)
+│   ├── userModel.js
+│   ├── videoModel.js
+│   ├── playlistModel.js
+│   ├── reportModel.js
+│   ├── bookingModel.js
+│   ├── rewardModel.js
+│   ├── searchModel.js
+│   ├── licenseeModel.js
+│   ├── paymentModel.js
+│   ├── downloadModel.js
+│   ├── streamModel.js
+│   ├── drmModel.js
+│   └── transcodingModel.js
 │
 ├── 📂 routes
-│   ├── users.js (Routes related to users)
-│   ├── videos.js (Routes related to videos)
-│   ├── playlists.js (Routes related to playlists)
-│   ├── reports.js (Routes related to reports)
-│   ├── bookings.js (Routes related to bookings)
-│   ├── rewards.js (Routes related to rewards)
-│   ├── search.js (Routes related to search)
-│   ├── licensees.js (Routes related to licensees)
-│   ├── payments.js (Routes related to payments)
-│   ├── downloads.js (Routes related to downloads)
-│   ├── streams.js (Routes related to streams)
-│   ├── drm.js (Routes related to DRM)
-│   └── transcoding.js (Routes related to transcoding)
+│   ├── usersRoutes.js
+│   ├── videosRoutes.js
+│   ├── playlistsRoutes.js
+│   ├── reportsRoutes.js
+│   ├── bookingsRoutes.js
+│   ├── rewardsRoutes.js
+│   ├── searchRoutes.js
+│   ├── licenseesRoutes.js
+│   ├── paymentsRoutes.js
+│   ├── downloadsRoutes.js
+│   ├── streamsRoutes.js
+│   ├── drmRoutes.js
+│   └── transcodingRoutes.js
 │
 ├── 📂 middleware
-│   ├── auth.js (Middleware for authentication)
-│   └── error.js (Middleware for error handling)
+│   ├── authMiddleware.js
+│   ├── errorMiddleware.js
+│   ├── rateLimitMiddleware.js
+│   └── validationMiddleware.js
 │
 ├── 📂 utils
-│   ├── helpers.js (Utility functions)
-│   └── constants.js (Constants used throughout the app)
+│   ├── helpers.js
+│   ├── constants.js
+│   └── validators.js
 │
-├── .env (Environment variables: DB connection, JWT secret, etc.)
-├── package.json (Project metadata and dependencies)
-└── server.js (Main entry point, sets up and starts the server)
+├── 📂 tests
+│   ├── users.test.js
+│   ├── videos.test.js
+│   ├── playlists.test.js
+│   ├── reports.test.js
+│   ├── bookings.test.js
+│   ├── rewards.test.js
+│   ├── search.test.js
+│   ├── licensees.test.js
+│   ├── payments.test.js
+│   ├── downloads.test.js
+│   ├── streams.test.js
+│   ├── drm.test.js
+│   └── transcoding.test.js
+│
+├── .env (Environment variables)
+├── package.json
+└── server.js (Main entry point)
+
 ```
 
 ## 📄 Data Model (PostgreSQL)
