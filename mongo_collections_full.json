@@ -1,0 +1,68 @@
+{
+  "Users": [
+    {
+      "user_id": "unique_id_1",
+      "username": "user1",
+      "email": "user1@example.com",
+      "password": "hashed_password",
+      "profile": {
+        "name": "John Doe",
+        "avatar": "url_to_avatar",
+        "bio": "Short bio about John"
+      },
+      "rewards": 100,
+      "playlists": ["playlist_id_1", "playlist_id_2"],
+      "role": "regular"
+    }
+  ],
+  "Videos": [
+    {
+      "video_id": "unique_video_id_1",
+      "title": "Sample Video",
+      "description": "This is a sample video description.",
+      "url": "url_to_video_file",
+      "thumbnail": "url_to_thumbnail",
+      "status": "approved",
+      "uploader": "unique_id_1",
+      "booking_url": "url_to_booking_site",
+      "reports": [],
+      "metadata": {
+        "duration": "10 mins",
+        "format": "mp4"
+      }
+    }
+  ],
+  "Playlists": [
+    {
+      "playlist_id": "playlist_id_1",
+      "name": "Favorite Videos",
+      "videos": ["unique_video_id_1"],
+      "owner": "unique_id_1"
+    }
+  ],
+  "Reports": [
+    {
+      "report_id": "unique_report_id_1",
+      "video": "unique_video_id_1",
+      "reporter": "unique_id_1",
+      "reason": "Inappropriate content",
+      "timestamp": "2023-10-12T10:00:00Z"
+    }
+  ],
+  "LicenseeBuckets": [
+    {
+      "bucket_id": "unique_bucket_id_1",
+      "videos": ["unique_video_id_1"],
+      "owner": "unique_licensee_id_1"
+    }
+  ],
+  "Transactions": [
+    {
+      "transaction_id": "unique_transaction_id_1",
+      "licensee": "unique_licensee_id_1",
+      "video": "unique_video_id_1",
+      "amount": 10.00,
+      "timestamp": "2023-10-12T10:05:00Z"
+    }
+  ]
+}
