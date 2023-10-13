@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const DRMController = require('../controllers/drmController')
 
 /**
  * @swagger
@@ -17,10 +18,10 @@ const router = express.Router();
  *       200:
  *         description: DRM protection applied
  */
-router.post('/protect/:videoId', (req, res) => {
-    // DRM protection logic here
-    res.status(200).send('DRM protection applied');
-});
+router.post('/protect/', DRMController.createDRM);
+router.get('/protect/:videoId', DRMController.getDRMById);
+router.patch('/protect/:videoId', DRMController.updateDRM);
+router.delete('/protect/:videoId', DRMController.deleteDRM);
 
 module.exports = router;
 

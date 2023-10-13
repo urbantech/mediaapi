@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const BookingController = require('../controllers/bookingsController')
 
 /**
  * @swagger
@@ -22,10 +23,10 @@ const router = express.Router();
  *       200:
  *         description: Booking made successfully
  */
-router.post('/make', (req, res) => {
-    // Booking logic here
-    res.status(200).send('Booking made successfully');
-});
+router.post('/',BookingController.createBooking );
+router.get('/:id',BookingController.getBookingById );
+router.patch('/:id',BookingController.updateBooking );
+router.delete('/:id',BookingController.deleteBooking );
 
 module.exports = router;
 

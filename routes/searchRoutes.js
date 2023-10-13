@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const SearchController = require('../controllers/searchController')
 
 /**
  * @swagger
@@ -17,10 +18,12 @@ const router = express.Router();
  *       200:
  *         description: Search results returned
  */
-router.get('/videos', (req, res) => {
-    // Video search logic here
-    res.status(200).send('Search results');
-});
+
+
+router.post('/videos', SearchController.createSearch );
+router.get('/videos/:id', SearchController.getSearchById );
+router.patch('/videos/:id', SearchController.updateSearch);
+router.delete('/videos/:id', SearchController.deleteSearch );
 
 module.exports = router;
 

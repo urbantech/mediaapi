@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const UserController = require('../controllers/usersController')
 
 /**
  * @swagger
@@ -24,36 +25,12 @@ const router = express.Router();
  *       200:
  *         description: User registered successfully
  */
-router.post('/register', (req, res) => {
-    // Registration logic here
-    res.status(200).send('User registered successfully');
-});
+router.post('/user', UserController.createUser);
+router.get('/user/:id', UserController.getUserById);
+router.patch('/user/:id', UserController.updateUser);
+router.delete('/user/:id', UserController.deleteUser);
 
-/**
- * @swagger
- * /users/login:
- *   post:
- *     summary: Login user
- *     tags: [Users]
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               email:
- *                 type: string
- *               password:
- *                 type: string
- *     responses:
- *       200:
- *         description: Login successful
- */
-router.post('/login', (req, res) => {
-    // Login logic here
-    res.status(200).send('Login successful');
-});
+
 
 module.exports = router;
 

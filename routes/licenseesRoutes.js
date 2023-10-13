@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const LicenseeController = require('../controllers/licenseesController')
 
 /**
  * @swagger
@@ -22,10 +23,11 @@ const router = express.Router();
  *       200:
  *         description: Licensee registered successfully
  */
-router.post('/register', (req, res) => {
-    // Licensee registration logic here
-    res.status(200).send('Licensee registered successfully');
-});
+router.post('/register',LicenseeController.createLicensee );
+router.get('/register/:id',LicenseeController.getLicenseeById );
+router.patch('/register/:id',LicenseeController.updateLicensee );
+router.delete('/register/:id',LicenseeController.deleteLicensee );
+
 
 module.exports = router;
 

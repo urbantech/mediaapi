@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const RewardController = require('../controllers/rewardsController')
 
 /**
  * @swagger
@@ -22,10 +23,11 @@ const router = express.Router();
  *       200:
  *         description: Reward claimed successfully
  */
-router.post('/claim', (req, res) => {
-    // Reward claim logic here
-    res.status(200).send('Reward claimed successfully');
-});
+
+router.post('/claim', RewardController.createReward );
+router.get('/claim/:id', RewardController.getRewardById );
+router.patch('/claim/:id', RewardController.updateReward);
+router.delete('/claim/:id', RewardController.deleteReward );
 
 module.exports = router;
 

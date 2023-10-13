@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
+const PlaylistController = require('../controllers/playlistsController')
 /**
  * @swagger
  * /playlists/create:
@@ -22,10 +22,10 @@ const router = express.Router();
  *       200:
  *         description: Playlist created successfully
  */
-router.post('/create', (req, res) => {
-    // Playlist creation logic here
-    res.status(200).send('Playlist created successfully');
-});
+router.post('/create', PlaylistController.createPlaylist);
+router.get('/create/:id', PlaylistController.getPlaylistById);
+router.patch('/create/:id', PlaylistController.updatePlaylist);
+router.delete('/create/:id', PlaylistController.deletePlaylist);
 
 module.exports = router;
 

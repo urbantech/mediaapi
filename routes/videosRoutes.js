@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const VideoController = require('../controllers/videosController')
 
 /**
  * @swagger
@@ -21,10 +22,12 @@ const router = express.Router();
  *       200:
  *         description: Video uploaded successfully
  */
-router.post('/upload', (req, res) => {
-    // Video upload logic here
-    res.status(200).send('Video uploaded successfully');
-});
+
+router.post('/upload', VideoController.createVideo);
+router.get('/upload/:id', VideoController.getVideoById);
+router.patch('/upload/:id', VideoController.updateVideo);
+router.delete('/upload/:id', VideoController.deleteVideo);
+
 
 module.exports = router;
 

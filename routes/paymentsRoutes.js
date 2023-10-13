@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const PaymentController = require('../controllers/paymentsController')
 
 /**
  * @swagger
@@ -22,10 +23,11 @@ const router = express.Router();
  *       200:
  *         description: Payment processed successfully
  */
-router.post('/process', (req, res) => {
-    // Payment processing logic here
-    res.status(200).send('Payment processed successfully');
-});
+router.post('/process',PaymentController.createPayment);
+router.get('/process/:id',PaymentController.getPaymentById);
+router.patch('/process/:id',PaymentController.updatePayment);
+router.delete('/process/:id',PaymentController.deletePayment);
+
 
 module.exports = router;
 

@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const DownloadController = require('../controllers/downloadsController')
+
 
 /**
  * @swagger
@@ -17,10 +19,10 @@ const router = express.Router();
  *       200:
  *         description: Video downloaded successfully
  */
-router.get('/video/:videoId', (req, res) => {
-    // Video download logic here
-    res.status(200).send('Video downloaded successfully');
-});
+router.get('/video/:videoId', DownloadController.getDownloadById);
+router.post('/video/:videoId', DownloadController.createDownload);
+router.patch('/video/:videoId', DownloadController.updateDownload);
+router.delete('/video/:videoId', DownloadController.deleteDownload);
 
 module.exports = router;
 

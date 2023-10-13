@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const TranscodingController = require('../controllers/transcodingController')
 
 /**
  * @swagger
@@ -17,10 +18,13 @@ const router = express.Router();
  *       200:
  *         description: Transcoding started
  */
-router.post('/start/:videoId', (req, res) => {
-    // Transcoding logic here
-    res.status(200).send('Transcoding started');
-});
+
+router.post('/start', TranscodingController.createTranscoding );
+router.get('/start/:videoId', TranscodingController.getTranscodingById );
+router.patch('/start/:videoId', TranscodingController.updateTranscoding);
+router.delete('/start/:videoId', TranscodingController.deleteTranscoding );
+
+
 
 module.exports = router;
 

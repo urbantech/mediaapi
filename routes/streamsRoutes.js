@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const StreamController = require('../controllers/streamsController')
 
 /**
  * @swagger
@@ -17,10 +18,13 @@ const router = express.Router();
  *       200:
  *         description: Video streaming initiated
  */
-router.get('/video/:videoId', (req, res) => {
-    // Video streaming logic here
-    res.status(200).send('Video streaming initiated');
-});
+
+
+router.post('/videos', StreamController.createStream );
+router.get('/videos/:videoId', StreamController.getStreamById );
+router.patch('/videos/:videoId', StreamController.updateStream);
+router.delete('/videos/:videoId', StreamController.deleteStream );
+
 
 module.exports = router;
 

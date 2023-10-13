@@ -30,15 +30,11 @@ const specs = swaggerJsdoc(options);
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
-// Import routes
-const usersRoutes = require('./routes/usersRoutes');
-const videosRoutes = require('./routes/videosRoutes');
-// ... import other routes as needed
+// Parent router 
+const appRouter = require('./Router')
+app.route(express.json()) ; 
+app.use('/' , appRouter)
 
-// Use routes
-app.use('/users', usersRoutes);
-app.use('/videos', videosRoutes);
-// ... use other routes as needed
 
 const PORT = process.env.PORT || 3000;
 
