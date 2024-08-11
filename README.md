@@ -252,7 +252,7 @@ The features with the highest RICE scores can be prioritized.
 
 ### 1. **Clone the Repository**:
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
+git clone https://github.com/urbantech/mediaapi.git
 ```
 
 ### 2. **Install Dependencies**:
